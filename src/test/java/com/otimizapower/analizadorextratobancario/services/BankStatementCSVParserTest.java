@@ -1,8 +1,6 @@
-package services;
+package com.otimizapower.analizadorextratobancario.services;
 
 import com.otimizapower.analizadorextratobancario.entities.BankTransaction;
-import com.otimizapower.analizadorextratobancario.services.BankStatementCSVParser;
-import com.otimizapower.analizadorextratobancario.services.IBankStatementParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
