@@ -1,6 +1,6 @@
-package com.otimizapower.services;
+package com.otimizapower.analizadorextratobancario.services;
 
-import com.otimizapower.entities.BankTransaction;
+import com.otimizapower.analizadorextratobancario.entities.BankTransaction;
 
 import java.time.Month;
 import java.util.List;

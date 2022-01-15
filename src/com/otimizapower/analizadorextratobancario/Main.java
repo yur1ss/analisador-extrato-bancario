@@ -1,8 +1,8 @@
-package com.otimizapower;
+package com.otimizapower.analizadorextratobancario;
 
-import com.otimizapower.services.BankStatementCSVParser;
-import com.otimizapower.services.BankTransactionAnalyzer;
-import com.otimizapower.services.IBankStatementParser;
+import com.otimizapower.analizadorextratobancario.services.BankStatementCSVParser;
+import com.otimizapower.analizadorextratobancario.services.BankTransactionAnalyzer;
+import com.otimizapower.analizadorextratobancario.services.IBankStatementParser;
 
 import java.io.IOException;
 import java.time.Month;

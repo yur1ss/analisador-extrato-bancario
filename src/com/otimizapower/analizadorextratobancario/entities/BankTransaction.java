@@ -1,4 +1,4 @@
-package com.otimizapower.entities;
+package com.otimizapower.analizadorextratobancario.entities;
 
 import java.time.LocalDate;
 import java.util.Objects;

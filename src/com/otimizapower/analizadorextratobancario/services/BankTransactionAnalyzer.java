@@ -1,8 +1,6 @@
-package com.otimizapower.services;
+package com.otimizapower.analizadorextratobancario.services;
 
-import com.otimizapower.entities.BankTransaction;
-import com.otimizapower.services.BankStatementProcessor;
-import com.otimizapower.services.IBankStatementParser;
+import com.otimizapower.analizadorextratobancario.entities.BankTransaction;
 
 import java.io.IOException;
 import java.nio.file.Files;
