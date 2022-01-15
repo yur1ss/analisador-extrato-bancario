@@ -10,7 +10,7 @@ import java.time.Month;
 import java.util.List;
 
 public class BankTransactionAnalyzer {
-    private static final String RESOURCES = "src/com/otimizapower/resources/";
+    private static final String RESOURCES = "src/com/otimizapower/analizadorextratobancario/resources/";
 
     public BankTransactionAnalyzer() {
         // TODO document why this constructor is empty
