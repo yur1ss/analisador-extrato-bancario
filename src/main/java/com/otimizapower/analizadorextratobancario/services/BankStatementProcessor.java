@@ -1,10 +1,11 @@
 package com.otimizapower.analizadorextratobancario.services;
 
 import com.otimizapower.analizadorextratobancario.entities.BankTransaction;
+import com.otimizapower.analizadorextratobancario.entities.SummaryStatistics;
 
 import java.time.Month;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BankStatementProcessor {
     private final List<BankTransaction> bankTransactions;
@@ -31,22 +32,28 @@ public class BankStatementProcessor {
     }
 
     public double findTransactionGreaterThanEqual(final Double amount) {
-        return this.findTransactions(bankTransaction -> bankTransaction.getAmount() >= amount).stream()
+        return this.bankTransactions.stream()
+                .filter(bankTransaction -> bankTransaction.getAmount() >= amount)
                 .mapToDouble(BankTransaction::getAmount)
                 .sum();
     }
 
     public double findTransactionGreaterThanEqualInMonth(final Double amount, final Month month) {
-        return this.findTransactions(bankTransaction ->
+        return this.bankTransactions.stream()
+                .filter(bankTransaction ->
                         bankTransaction.getAmount() >= amount && bankTransaction.getDate().getMonth().equals(month))
-                .stream()
                 .mapToDouble(BankTransaction::getAmount)
                 .sum();
     }
 
-    private List<BankTransaction> findTransactions(final IBankTransactionFilter bankTransactionFilter) {
-        return this.bankTransactions.stream()
-                .filter(bankTransactionFilter::test)
-                .collect(Collectors.toUnmodifiableList());
+    public SummaryStatistics summarizeTransactions() {
+        final DoubleSummaryStatistics doubleSummaryStatistics = bankTransactions.stream()
+                .mapToDouble(BankTransaction::getAmount)
+                .summaryStatistics();
+
+        return SummaryStatistics.newInstance(doubleSummaryStatistics.getSum(),
+                doubleSummaryStatistics.getMax(),
+                doubleSummaryStatistics.getMin(),
+                doubleSummaryStatistics.getAverage());
     }
 }
