@@ -11,6 +11,17 @@ O *Single Responsibility Principle* (SRP) torna nosso desenvolvimento de softwar
 Obs.: Você pode verificar essa diretriz na classe **BankStatementCSVParser**.
 <br>
 
+## PRINCÍPIO OPEN/CLOSED
+O *Open/Closed Principle* promove a ideia de que deve ser capaz alterar o comportamento de uma classe ou método sem a
+necessidade de modificar o código. Abaixo enumerei três motivos para que esse princípio deva ser seguido:
+- Reduz a fragilidade do código, uma vez que não altera o código existente.
+- Evita a duplicação pq podemos reutilizar o código existente.
+- Promove a dissociação, o que leva a uma manutenção melhor do código.
+
+Obs.: Você pode verificar essa diretriz na interface funcional **IBankTransactionFilter** que é utilizada na classe 
+**BankStatementProcessor**.
+<br>
+
 ## TESTE UNITÁRIOS
 Para o testes unitários, optei pelo padrão *Given-When-Then* que contem três estágio para configurar um teste unitário.
 Explicando melhor, esse padrão consiste em:
