@@ -27,8 +27,8 @@ public class BankTransactionAnalyzer {
     }
 
     private static void collectSummary(final BankStatementProcessor bankStatementProcessor, final Month month) {
-        System.out.println("Total de transações: R$ " + bankStatementProcessor.getTotalAllTransaction());
-        System.out.println("Total de transações do mes de " + month.name() + " : R$ "  + bankStatementProcessor.getTotalInMonth(month));
+        System.out.println("Total de transações: R$ " + bankStatementProcessor.sumTotalTransaction());
+        System.out.println("Total de transações do mes de " + month.name() + " : R$ "  + bankStatementProcessor.findTotalTransactionInMonth(month));
 
     }
 }

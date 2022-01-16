@@ -19,7 +19,7 @@ class BankStatementProcessorTest {
 
     @Test
     void deveAnalisarSeOTotalDasTransacoesEstaCorreto() {
-        final double result = bankStatementProcessor.getTotalAllTransaction();
+        final double result = bankStatementProcessor.sumTotalTransaction();
         final double expected = 900d;
 
         Assertions.assertEquals(expected, result, 0.0d);
@@ -27,7 +27,23 @@ class BankStatementProcessorTest {
 
     @Test
     void deveAnalisarSeOTotalDoMesDeJaneiroEstaCorreto() {
-        final double result = bankStatementProcessor.getTotalInMonth(Month.JANUARY);
+        final double result = bankStatementProcessor.findTotalTransactionInMonth(Month.JANUARY);
+        final double expected = 1000d;
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void deveAnalisarSeATransacaoEhMaiorOuIgualEstaCorreto() {
+        final double result = bankStatementProcessor.findTransactionGreaterThanEqual(900d);
+        final double expected = 1000d;
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void deveAnalisarSeATransacaoEhMaiorOuIgualNoMesEstaCorreto() {
+        final double result = bankStatementProcessor.findTransactionGreaterThanEqualInMonth(500d, Month.JANUARY);
         final double expected = 1000d;
 
         Assertions.assertEquals(expected, result);

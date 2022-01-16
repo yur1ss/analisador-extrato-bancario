@@ -11,6 +11,7 @@ public class BankStatementCSVParser implements IBankStatementParser {
     private static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public BankStatementCSVParser() {
+        // TODO document why this constructor is empty
     }
 
     @Override
